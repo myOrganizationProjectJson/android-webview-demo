@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+<title>GO FOR IT</title>
+</head>
+<body>
+<div style="padding: 14%;text-align:center;"><font size="250px" style="font-size: 179px;" id='h'>I`m Running !<br></font>
+<font></font></div>
+<script type="text/JavaScript">
+   var myDate = new Date();    
+   var today=myDate.getFullYear()+"-"+(myDate.getMonth()+1)+"-"+myDate.getDate();    //获取完整的年份(4位,1970-????)
+
+   document.getElementById("h").innerHTML = DateDiff(today,"2017-02-26");
+ 
+   //计算天数差的函数，通用  
+   function  DateDiff(sDate1,  sDate2){    //sDate1和sDate2是2006-12-18格式  
+       var  aDate,  oDate1,  oDate2,  iDays  
+       aDate  =  sDate1.split("-")  
+       oDate1  =  new  Date(aDate[1]  +  '-'  +  aDate[2]  +  '-'  +  aDate[0])    //转换为12-18-2006格式  
+       aDate  =  sDate2.split("-")  
+       oDate2  =  new  Date(aDate[1]  +  '-'  +  aDate[2]  +  '-'  +  aDate[0])  
+       iDays  =  parseInt(Math.abs(oDate1  -  oDate2)  /  1000  /  60  /  60  /24)    //把相差的毫秒数转换为天数  
+       return  iDays  
+   }    
+   
+</script>
+</body>
+</html>
